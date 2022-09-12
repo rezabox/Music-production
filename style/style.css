@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/image.1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: blur(20px);
+  top: 0;
+  z-index: -1;
+}
+
+.img2 {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px black;
+  filter: grayscale(20%);
+}
+
+.music-player, .img2 {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.img2.active {
+  -webkit-animation: routation 5s linear infinite;
+          animation: routation 5s linear infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+@-webkit-keyframes routation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes routation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.music-player {
+  background-color: aliceblue;
+  padding: 20px;
+  width: 300px;
+  border-radius: 12px;
+  text-align: center;
+}
+.music-player h2 {
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 1000;
+  font-size: xx-large;
+}
+
+.play-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  font-size: medium;
+  background-color: rgba(233, 223, 223, 0.459);
+}
+
+.play-btn:focus {
+  border: 1px solid black;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+input[type=range] {
+  cursor: pointer;
+  width: 50%;
+  background: rgb(44, 167, 44);
+  margin: 0;
+  border-radius: 50px;
+  transition: opacity 0.2s;
+  height: 3px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border: 3px solid #3774ff;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.progress .current, .progress .duration {
+  font-size: small;
+  color: green;
+}
+.progress .music-progress-music {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: rgba(161, 157, 157, 0.37);
+  height: 3px;
+  margin: 0px 5px 0px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.progress .progress-music {
+  width: 0;
+  background-color: green;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.navigation .action-btn {
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.navigation .action-btn:focus {
+  border: 1px solid black;
+}
+.navigation .repeat-track, .navigation .random-track {
+  border: none;
+  cursor: pointer;
+}
+.navigation .random-track.show-random {
+  color: #3774ff;
+}/*# sourceMappingURL=style.css.map */
