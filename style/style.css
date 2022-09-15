@@ -31,27 +31,31 @@ body {
   border-radius: 50%;
   box-shadow: 0px 0px 10px black;
   filter: grayscale(20%);
+  -webkit-animation: routation 15s linear infinite;
+          animation: routation 15s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 .img2.active {
-  -webkit-animation: routation 5s linear infinite;
-          animation: routation 5s linear infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 @-webkit-keyframes routation {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(359deg);
   }
 }
 
 @keyframes routation {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(359deg);
   }
 }
@@ -149,4 +153,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 .navigation .action-btn:focus {
   border: 1px solid black;
+}
+.navigation .repeat-track, .navigation .random-track {
+  border: none;
+  cursor: pointer;
+}
+.navigation .random-track.show-random {
+  color: #3774ff;
 }/*# sourceMappingURL=style.css.map */
